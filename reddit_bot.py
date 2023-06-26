@@ -17,10 +17,10 @@ def bot_login():
 def run_bot(r, comments_replied_to):
 	print "Searching last 1,000 comments"
 
-	for comment in r.subreddit('test').comments(limit=1000):
+	for comment in r.subreddit('sports').comments(limit=1000):
 		if "sample user comment" in comment.body and comment.id not in comments_replied_to and comment.author != r.user.me():
 			print "String with \"sample user comment\" found in comment " + comment.id
-			comment.reply("Hey, I like your comment!")
+			comment.reply("Hey, I like baseball too!")
 			print "Replied to comment " + comment.id
 
 			comments_replied_to.append(comment.id)
